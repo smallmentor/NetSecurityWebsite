@@ -1,0 +1,34 @@
+<html>
+<head>
+    <!--head-->
+	<script type="text/javascript" src="js/head.js"></script>
+</head>
+<body>
+	<!--導覽列-->
+	<script type="text/javascript" src="js/navbar.js"></script>
+    <!--網頁內容-->
+	<div class="main">
+		<h1>WireShark</h1>
+        <hr />
+		<p>使用wireshark擷取封包，透過觀察封包內容來獲得未加密的傳送內容。</p>
+		<h3>1. PTT</h3>
+		<p>ppt使用telnet來傳遞資料，telnet是透過明碼方式傳送，所以可以獲得使用者輸入的帳號密碼。</p>
+		<img width="100%" src="images/ex6_1.PNG" />
+		<br />
+		<h3>2. 作業FTP主機(120.117.58.240)</h3>
+		<p>FTP主機也是使用明碼傳輸，所以也可以透過wireShark來看到傳輸內容。</p>
+		<img width="100%" src="images/ex6_2.PNG" />
+		<br />
+		<h3>3. PChome</h3>
+		<p>PChome使用https來進行連線，因此只能看到基本的連線資訊，其餘內容皆為加密。</p>
+		<img width="100%" src="images/ex6_3.PNG" />
+		<br />
+		<h3>4. 網頁主機(120.117.61.75)</h3>
+		<p>網頁主機使用未加密的http，可以看到網頁的html標籤</p>
+		<img width="100%" src="images/ex6_4.PNG" />
+		<h3>4. php.testsparker</h3>
+		<p>網頁主機使用未加密的http，可以看到傳輸的帳號密碼</p>
+		<img width="100%" src="images/ex6_5.PNG" />
+    </div>
+</body>
+</html>

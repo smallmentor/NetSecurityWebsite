@@ -1,0 +1,61 @@
+<html>
+<head>
+    <!--head-->
+	<script type="text/javascript" src="js/head.js"></script>
+</head>
+<body>
+	<!--導覽列-->
+	<script type="text/javascript" src="js/navbar.js"></script>
+    <!--網頁內容-->
+	<div class="main">
+		<div class="page-header">
+		<h1>SQL Injection
+        	<small>(已失效)</small>
+        </h1>
+    </div>
+    <hr />
+    <div class="page-header">
+    	<h2>環境設定</h2>
+    </div>
+    <p>1. Windows 安裝 AppServ</p>
+    <p>2. MySql登入密碼為abc123 (若欲設定其他密碼, 須自行更新 connect.php 中的密碼欄位)</p>
+    <br />
+    <br />
+    <div class="page-header">
+    	<h2>資料庫建立</h2>
+    </div>
+    <p>1. 於phpMyAdmin中匯入sqlCmd.sql，完成資料庫與資料表之建立</p>
+    <img src="images/ex10_1.PNG" class="img-fluid" alt="Responsive image"/>
+    <br />
+    <br />
+    <div class="page-header">
+    	<h2>模擬程式執行方式</h2>
+    </div>
+    <p>1. 使用瀏覽器連線至Apache之www目錄下，您所放置 login.php 之位置</p>
+    <p>2. 參考該頁面的使用說明</p>
+    <br />
+    <br />
+    <div class="page-header">
+    	<h2>Windows與AppServ環境下，關閉PHP過濾敏感字元之設定方式</h2>
+    </div>
+    <p>1. 開始\所有程式\AppServ\Configuration Server\PHP Edit the php.ini Configuration File</p>
+    <p>2. 系統將開啟 php.ini</p>
+    <p>3. 透過 Ctrl + F 找到「magic_quotes_gpc」，將其值設定為「Off」</p>
+    <p>4. 開始\所有程式\AppServ\Control Server by Service\Apache Restart</p>
+    <img src="images/ex10_2.PNG" class="img-fluid" alt="Responsive image"/>
+        <br />
+    <br />
+    <div class="page-header">
+    	<h2>結果</h2>
+    </div>
+    <p>正常登陸(成功)</p>
+    <img src="images/ex10_3.PNG" class="img-fluid" alt="Responsive image"/>
+    <br />
+    <br />
+    <p>SQL Injection(失敗)</p>
+    <img src="images/ex10_4.PNG" class="img-fluid" alt="Responsive image"/>
+    <br />
+    <br />
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html>
+<head>
+<!--head-->
+<script type="text/javascript" src="js/head.js"></script>
+</head>
+<body>
+<!--導覽列--> 
+<script type="text/javascript" src="js/navbar.js"></script> 
+<!--網頁內容-->
+<div class="main">
+  <div class="page-header">
+    <h1>一、利用Microsoft的內建FireWall功能，終止pchome的連線 <small> (超詳細)</small> </h1>
+  </div>
+  <hr />
+  <div class="page-header">
+    <h2>step1:連線至pchome</h2>
+  </div>
+  <p>確認可以連上pchome</p>
+  <img src="images/ex8_1.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <div class="page-header">
+    <h2>step2:查pchome的IP位址</h2>
+  </div>
+  <p> 方法1: C:\>ping www.pchome.com.tw<br />
+    方法2: C:\>nslookup www.pchome.com.tw<br />
+    最後查出的IP為：117.18.232.133 </p>
+  <div class="page-header">
+    <h2>step3:使用Microsoft的Firewall設規則</h2>
+  </div>
+  <p> 控制台>>系統及安全>>Window防火牆>>進階設定>>輸出規則>>新增規則<br />
+    <img src="images/ex8_2.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <p></p>
+  <img src="images/ex8_3.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/> 1.規則類型:自訂<br />
+  2.程式:所有程式<br />
+  3.通訊協定:任一<br />
+  4.領域：<br/>
+  本機IP:任何IP<br />
+  遠端IP:這些IP>>新增：<br />
+  117.18.232.133<br />
+  117.18.232.0/24<br />
+  5.動作:封鎖連線<br />
+  6.設定檔:全選<br />
+  7.名稱:pchome
+  </p>
+  <img src="images/ex8_4.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step4:連線phcome出現"連線封鎖"</h2>
+  </div>
+  <img src="images/ex8_5.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/> <br />
+  <br />
+  <br />
+  <div class="page-header">
+    <h1>二、在FireWall開啟狀態下 讓別人電腦可以ping到你的電腦 <small> (超詳細)</small> </h1>
+  </div>
+  <hr />
+  <div class="page-header">
+    <h2>step1:設定防火牆</h2>
+  </div>
+  <p>開啟控制台>>系統安全性>>Windows FireWall>>進階設定>>輸入規則>>檔案及印表機共用(回應要求-ICMP-In)</p>
+  <img src="images/ex8_6.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step2:設定一般</h2>
+  </div>
+  <p>勾選"已啟動"</p>
+  <img src="images/ex8_7.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step3:設定網域</h2>
+  </div>
+  <p>更改為"任何IP"</p>
+  <img src="images/ex8_8.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step4:設定完成</h2>
+  </div>
+  <img src="images/ex8_9.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h1>三、在Linux利用Iptables中斷與google的連線 <small> (超詳細)</small> </h1>
+  </div>
+  <hr />
+  <div class="page-header">
+    <h2>step1:開啟Linux</h2>
+  </div>
+  <p>開啟VM Ware>>概覽>>終端機</p>
+  <div class="page-header">
+    <h2>step2:輸入指令</h2>
+  </div>
+  <p>輸入：iptables –I OUTPUT –d www.goole.com.tw –j DROP</p>
+  <div class="page-header">
+    <h2>step3:再度開啟google</h2>
+  </div>
+  <p>使用firefox連線google</p>
+  <img src="images/ex8_10.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h1>三、Linux的iptables範例 <small> (超詳細)</small> </h1>
+  </div>
+  <hr />
+  <div class="page-header">
+    <h2>step1:開啟虛擬主機</h2>
+  </div>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step2:用 SSH Secure Shell Client 登入虛擬主機</h2>
+  </div>
+  <p>回到 Windows<br />
+    點選 Quick Connect<br />
+  <table class="table table-striped border" style="max-width:250px">
+    <tr>
+      <th scope="row">Host:</th>
+      <td>192.168.52.129</td>
+    </tr>
+    <tr>
+      <th scope="row">User:</th>
+      <td>root</td>
+    </tr>
+    <tr>
+      <th scope="row">Port:</th>
+      <td>22</td>
+    </tr>
+  </table>
+  點選Connect<br />
+  成功登入
+  </p>
+  <img src="images/ex8_11.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step3:到虛擬主機終端機輸入指令</h2>
+  </div>
+  <p> # iptables -I INPUT -p tcp --dport 22 -j REJECT</p>
+  <img src="images/ex8_12.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>'
+  <br />
+  <br />
+  <div class="page-header">
+    <h2>step4:回到Windows，再用SSH連線</h2>
+  </div>
+  <p>顯示連線錯誤訊息</p>
+  <img src="images/ex8_13.PNG" class="img-fluid" style="max-width：100％; height：auto;" alt="Responsive image"/>
+  <hr />
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+11:41:52	55/55	---M--	200	added ('OK')	text/plain	etag:%2243ef59-37-4f3fffe26ac40%22	http://web.ck.tp.edu.tw/robots.txt		(from )
+11:41:53	39629/39629	---MC-	200	added ('OK')	text/html	date:Fri,%2016%20Mar%202018%2003:41:50%20GMT	http://web.ck.tp.edu.tw/web2007/index.php	C:/My%20Websites/CK_TP/web.ck.tp.edu.tw/web2007/index.html	(from )
